@@ -5,9 +5,9 @@ import moment from "moment";
 // import "moment/min/locales";
 // import Related from "~/components/slug/related.vue";
 
-components: {
-  Related;
-}
+// components: {
+//   Related;
+// }
 // moment.locale("en");
 
 const { category, slug } = useRoute().params;
