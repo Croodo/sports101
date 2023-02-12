@@ -3,7 +3,7 @@ import "lazysizes";
 import moment from "moment";
 
 // import "moment/min/locales";
-import Related from "~/components/slug/related.vue";
+// import Related from "~/components/slug/related.vue";
 
 components: {
   Related;
@@ -211,7 +211,7 @@ const pubDate = moment(post.value.date).format("Do MMMM YYYY");
         "
       >
         <div>
-          <Related :id="post._id" :maincat="post.maincategoryurl"></Related>
+          <!-- <Related :id="post._id" :maincat="post.maincategoryurl"></Related> -->
         </div>
       </div>
     </div>
