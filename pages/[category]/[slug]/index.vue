@@ -211,7 +211,7 @@ const pubDate = moment(post.value.date).format("Do MMMM YYYY");
         "
       >
         <div>
-          <!-- <Related :id="post._id" :maincat="post.maincategoryurl"></Related> -->
+          <Related :id="post._id" :maincat="post.maincategoryurl"></Related>
         </div>
       </div>
     </div>
