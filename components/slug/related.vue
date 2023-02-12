@@ -1,13 +1,5 @@
 <script setup>
 import moment from "moment/min/moment-with-locales";
-
-const { id, maincat } = defineProps({
-  id: {},
-  maincat: {},
-});
-const { category, slug } = useRoute().params;
-const uri = "/api/blog/post/related/" + maincat + `?id=${id}`;
-const { data: related } = await useFetch(uri);
 moment.locale("hi");
 const nums = {
   "०": 0,
@@ -28,6 +20,13 @@ function rep(str) {
       return Object.keys(nums).some((n) => n === d) ? nums[d] : d;
     });
 }
+const { id, maincat } = defineProps({
+  id: {},
+  maincat: {},
+});
+const { category, slug } = useRoute().params;
+const uri = "/api/blog/post/related/" + maincat + `?id=${id}`;
+const { data: related } = await useFetch(uri);
 // watch(related,
 //   const result = data.map((elm) => {
 //   return {

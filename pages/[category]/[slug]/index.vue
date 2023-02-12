@@ -2,13 +2,13 @@
 import "lazysizes";
 import moment from "moment";
 
-// import "moment/min/locales";
-// import Related from "~/components/slug/related.vue";
+import "moment/min/locales";
+import Related from "~/components/slug/related.vue";
 
-// components: {
-//   Related;
-// }
-// moment.locale("en");
+components: {
+  Related;
+}
+moment.locale("en");
 
 const { category, slug } = useRoute().params;
 const route = useRoute();
