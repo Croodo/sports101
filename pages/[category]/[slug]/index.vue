@@ -1,6 +1,6 @@
 <script setup>
 import "lazysizes";
-import moment from "moment/min/moment-with-locales";
+import moment from "moment";
 
 // import "moment/min/locales";
 import Related from "~/components/slug/related.vue";
@@ -8,7 +8,7 @@ import Related from "~/components/slug/related.vue";
 components: {
   Related;
 }
-moment.locale("en");
+// moment.locale("en");
 
 const { category, slug } = useRoute().params;
 const route = useRoute();
