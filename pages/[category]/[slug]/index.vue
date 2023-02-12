@@ -31,7 +31,7 @@ const wpm = 225;
 const words = post.value.body.trim().split(/\s+/).length;
 const readtime = Math.ceil(words / wpm);
 
-const pubDate = moment(post.value.datepublished).format("Do MMMM YYYY");
+const pubDate = moment(post.value.date).format("Do MMMM YYYY");
 </script>
 <template>
   <div class="loading-container m-auto flex-grow w-full" v-if="pending">
