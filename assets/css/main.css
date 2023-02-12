@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  /* font-family: "Inter", sans-serif; */
+  @apply dark:bg-zinc-900 dark:text-neutral-200 text-zinc-800;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.youtube-embed {
+  height: 0;
+  width: 100%;
+  padding-bottom: 56.2%;
+  position: relative;
+}
+.youtube-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --height: 60%;
+}
+
+.loading {
+  width: 60px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.loading span {
+  display: inline-block;
+  width: 25%;
+  height: var(--height);
+  background-color: rgb(240, 240, 240);
+}
+
+.loading span:nth-of-type(1) {
+  animation: anime1 1s ease-in-out infinite;
+}
+.loading span:nth-of-type(2) {
+  animation: anime1 1s ease-in-out 0.15s infinite;
+}
+.loading span:nth-of-type(3) {
+  animation: anime1 1s ease-in-out 0.3s infinite;
+}
+
+@keyframes anime1 {
+  from {
+    height: 60%;
+  }
+  40% {
+    height: 100%;
+  }
+  80% {
+    height: 60%;
+  }
+  to {
+    height: 60%;
+  }
+}
+
+/* ******************************* */
+.loading-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #4b7cb6; */
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
