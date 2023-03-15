@@ -1,19 +1,5 @@
 import Post from "~/server/api/models/sports";
-import moment from "moment/min/moment-with-locales";
 export default defineEventHandler(async (event) => {
-  moment.locale("hi");
-  const nums = {
-    "०": 0,
-    "१": 1,
-    "२": 2,
-    "३": 3,
-    "४": 4,
-    "५": 5,
-    "६": 6,
-    "७": 7,
-    "८": 8,
-    "९": 9,
-  };
   const query = getQuery(event);
   const resultsPerPage = 4;
   let id = query.id;
