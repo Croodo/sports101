@@ -1,5 +1,5 @@
 <script setup>
-import moment from "moment/min/moment-with-locales";
+import moment from 'moment';
 moment.locale("hi");
 const nums = {
   "०": 0,

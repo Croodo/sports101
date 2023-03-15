@@ -14,17 +14,15 @@ const { category, slug } = useRoute().params;
 const route = useRoute();
 const uri = "/api/blog/post/" + slug;
 // const { data: post } = await useFetch(uri);
-const { pending, data: post } = await useLazyAsyncData("post", () =>
-  $fetch(uri)
-);
+const { pending, data: post } = await useFetch(uri);
 
-if (!post.value) {
-  throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
-}
-const title = post.value.title;
+// if (!post.value) {
+//   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
+// }
+// const title = post.value.title;
 
 useHead({
-  title,
+  // title,
 });
 //extra
 const wpm = 225;
@@ -34,26 +32,16 @@ const readtime = Math.ceil(words / wpm);
 const pubDate = moment(post.value.date).format("Do MMMM YYYY");
 </script>
 <template>
-  <div class="loading-container m-auto flex-grow w-full" v-if="pending">
+  <!-- <div class="loading-container m-auto flex-grow w-full" v-if="pending">
     <div class="loading animate-pulse">
       <span></span><span></span><span></span>
     </div>
-  </div>
-  <div v-else class="pageContent">
+  </div> -->
+  <div class="pageContent">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-14">
       <div>
         <ul
-          class="
-            font-medium
-            text-base
-            md:text-xl
-            lg:text-lg
-            flex
-            text-teal-500
-            gap-3
-            breadcumb
-            relative
-          "
+          class="font-medium text-base md:text-xl lg:text-lg flex text-teal-500 gap-3 breadcumb relative"
         >
           <li>
             <nuxt-link :to="`/`"> SE</nuxt-link>
@@ -65,19 +53,7 @@ const pubDate = moment(post.value.date).format("Do MMMM YYYY");
           </li>
         </ul>
         <h1
-          class="
-            heading
-            text-lg
-            leading-7
-            lg:leading-[65px]
-            md:text-4xl
-            lg:text-6xl
-            font-black
-            lg:font-bold
-            mt-3
-            lg:mt-5
-            mb-2
-          "
+          class="heading text-lg leading-7 lg:leading-[65px] md:text-4xl lg:text-6xl font-black lg:font-bold mt-3 lg:mt-5 mb-2"
         >
           {{ post.headline }}
         </h1>
@@ -86,7 +62,7 @@ const pubDate = moment(post.value.date).format("Do MMMM YYYY");
         <div class="py-2 lg:mt-7">
           <div class="flex items-center">
             <img
-              src="https://static.wowoomen.com/assets/images/author/ritika-sen.webp"
+              src="/images/neha-adhikari.webp"
               class="rounded-full h-10 w-10 mr-3 ring-1 ring-teal-500 p-0.5"
             />
             <div class="flex flex-col">
@@ -143,15 +119,7 @@ const pubDate = moment(post.value.date).format("Do MMMM YYYY");
           </ul>
         </div>
         <div
-          class="
-            prose prose-zinc
-            dark:prose-invert
-            lg:prose-xl
-            md:prose-lg
-            first-letter:text-5xl
-            lg:first-letter:text-6xl
-            first-letter:mr-3 first-letter:float-left
-          "
+          class="prose prose-zinc dark:prose-invert lg:prose-xl md:prose-lg first-letter:text-5xl lg:first-letter:text-6xl first-letter:mr-3 first-letter:float-left"
           v-html="post.body"
         ></div>
         <p
@@ -201,14 +169,7 @@ const pubDate = moment(post.value.date).format("Do MMMM YYYY");
         </div> -->
       </div>
       <div
-        class="
-          w-full
-          mt-8
-          lg:mt-8 lg:w-[33%]
-          rounded-3xl
-          h-fit
-          lg:ml-20 lg:sticky lg:top-12
-        "
+        class="w-full mt-8 lg:mt-8 lg:w-[33%] rounded-3xl h-fit lg:ml-20 lg:sticky lg:top-12"
       >
         <div>
           <Related :id="post._id" :maincat="post.maincategoryurl"></Related>
